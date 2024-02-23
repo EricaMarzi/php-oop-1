@@ -31,18 +31,46 @@ class Movie
         $this -> year = $year;
     }
 
-    public function getPoster()
+    public function getPoster(Director $director)
     {
-        echo $this->title . ' è un film uscito nel ' . $this->year . ' diretto da ' . $this->director;
+        return $this->title . ' è un film uscito nel ' . $this->year . ' diretto da ' . $director->last_name . '<br>';
     }
+    // public function getPoster()
+    // {
+    //     return $this->title . ' è un film uscito nel ' . $this->year . ' diretto da ' . $this->director . '<br>';
+    // }
 }
-//aggiungi il genere
 
 $movie1 = new Movie (1, 'Harry Potter e la pietra filosofale', 'Chris Columbus', 8, 2001);
 $movie2 = new Movie (2, 'Harry Potter e la camera dei segreti', 'Chris Columbus', 7, 2002);
 
-$movie1->getPoster();
-$movie2->getPoster();
+class Director 
+{
+    public $first_name;
+    public $last_name;
+    public $age;
+    public $role;
+
+    public function __construct($first_name, $last_name, $age, $role)
+    {
+        $this -> first_name -> $first_name;
+        $this -> last_name -> $last_name;
+        $this -> age -> $age;
+        $this -> role -> $role;
+    }
+
+    public function getFullName()
+    {
+        return $this->first_name . ' ' . $this->last_name;
+    }
+}
+
+$director1 = new Director ('Chris', 'Columbus', 65, 'Direttore, sceneggiatore e produttore cinematografico');
+var_dump($director1);
+
+// echo $movie1->getPoster($director1);
+// echo $movie2->getPoster($director1);
+
 
 
 ?>
