@@ -18,31 +18,25 @@ class Movie
 {
     public $id;
     public $title;
-    public $director;
     public $rating;
     public $year;
 
-    public function __construct ($id, $title, $director, $rating, $year) 
+    public function __construct ($id, $title, $rating, $year) 
     {
         $this -> id = $id;
         $this -> title = $title;
-        $this -> director = $director;
         $this -> rating = $rating;
         $this -> year = $year;
     }
 
     public function getPoster(Director $director)
     {
-        return $this->title . ' è un film uscito nel ' . $this->year . ' diretto da ' . $director->last_name . '<br>';
+        return $this->title . ' è un film uscito nel ' . $this->year . ' diretto da ' . $director->getFullName() . '<br>';
     }
-    // public function getPoster()
-    // {
-    //     return $this->title . ' è un film uscito nel ' . $this->year . ' diretto da ' . $this->director . '<br>';
-    // }
 }
 
-$movie1 = new Movie (1, 'Harry Potter e la pietra filosofale', 'Chris Columbus', 8, 2001);
-$movie2 = new Movie (2, 'Harry Potter e la camera dei segreti', 'Chris Columbus', 7, 2002);
+$movie1 = new Movie (1, 'Harry Potter e la pietra filosofale', 8, 2001);
+$movie2 = new Movie (2, 'Harry Potter e la camera dei segreti', 7, 2002);
 
 class Director 
 {
@@ -53,10 +47,10 @@ class Director
 
     public function __construct($first_name, $last_name, $age, $role)
     {
-        $this -> first_name -> $first_name;
-        $this -> last_name -> $last_name;
-        $this -> age -> $age;
-        $this -> role -> $role;
+        $this -> first_name = $first_name;
+        $this -> last_name = $last_name;
+        $this -> age = $age;
+        $this -> role = $role;
     }
 
     public function getFullName()
@@ -66,10 +60,9 @@ class Director
 }
 
 $director1 = new Director ('Chris', 'Columbus', 65, 'Direttore, sceneggiatore e produttore cinematografico');
-var_dump($director1);
 
-// echo $movie1->getPoster($director1);
-// echo $movie2->getPoster($director1);
+echo $movie1->getPoster($director1);
+echo $movie2->getPoster($director1);
 
 
 
