@@ -1,8 +1,5 @@
 <!--#### Descrizione
 
-
-#### Bonus 1
-Creare una classe Director e modificare la classe Movie in modo che accetti come direttore un'istanza di Director
 #### Bonus 2
 Creare una classe Actor e modificare la classe Movie in modo che accetti piú di un attore
 #### Bonus 3
@@ -13,31 +10,6 @@ Facciamo attenzione all’organizzazione del codice, suddividendolo in appositi 
 - organizzando il layout dividendo la struttura ed i contenuti in file e parziali dedicati.-->
 
 <?php 
-
-class Movie 
-{
-    public $id;
-    public $title;
-    public $rating;
-    public $year;
-
-    public function __construct ($id, $title, $rating, $year) 
-    {
-        $this -> id = $id;
-        $this -> title = $title;
-        $this -> rating = $rating;
-        $this -> year = $year;
-    }
-
-    public function getPoster(Director $director)
-    {
-        return $this->title . ' è un film uscito nel ' . $this->year . ' diretto da ' . $director->getFullName() . '<br>';
-    }
-}
-
-$movie1 = new Movie (1, 'Harry Potter e la pietra filosofale', 8, 2001);
-$movie2 = new Movie (2, 'Harry Potter e la camera dei segreti', 7, 2002);
-
 class Director 
 {
     public $first_name;
@@ -58,8 +30,38 @@ class Director
         return $this->first_name . ' ' . $this->last_name;
     }
 }
-
 $director1 = new Director ('Chris', 'Columbus', 65, 'Direttore, sceneggiatore e produttore cinematografico');
+
+
+class Movie 
+{
+    public $id;
+    public $title;
+    public $rating;
+    public $year;
+    public $plot
+
+    public function __construct ($id, $title, $rating, $year, $plot) 
+    {
+        $this -> id = $id;
+        $this -> title = $title;
+        $this -> rating = $rating;
+        $this -> year = $year;
+        $this -> plot = $plot;
+    }
+
+    public function getPoster(Director $director)
+    {
+        return $this->title . ' è un film uscito nel ' . $this->year . ' diretto da ' . $director->getFullName() . '<br>';
+    }
+}
+
+$plot1 = 'A 11 anni, Harry Potter scopre di essere il figlio orfano di due potenti maghi. Frequenta la scuola di magia e stregoneria di Hogwarts dove scopre la verità su se stesso e sulla morte dei suoi genitori.';
+$plot2 = 'Il secondo anno ad Hogwarts si rivela denso di pericoli per Harry Potter e i suoi amici: un mostro misterioso si aggira per la scuola pietrificando i maghi mezzosangue figli di babbani, e tutti incolpano Harry.';
+$movie1 = new Movie (1, 'Harry Potter e la pietra filosofale', 8, 2001, $plot1);
+$movie2 = new Movie (2, 'Harry Potter e la camera dei segreti', 7, 2002, $plot2);
+
+
 
 echo $movie1->getPoster($director1);
 echo $movie2->getPoster($director1);
