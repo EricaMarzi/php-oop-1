@@ -16,7 +16,27 @@ Facciamo attenzione all’organizzazione del codice, suddividendolo in appositi 
 - mettendo ciascuna classe nel proprio file e magari raggruppare tutte le classi in una cartella dedicata che possiamo chiamare Models
 - organizzando il layout dividendo la struttura ed i contenuti in file e parziali dedicati.-->
 
-<?php ?>
+<?php 
+
+class Movie {
+    public $title;
+    public $director;
+    public $rating;
+
+    public function __construct ($title, $director, $rating) {
+        $this -> title = $title;
+        $this -> director = $director;
+        $this -> rating = $rating;
+
+    }
+}
+
+$movie1 = new Movie ('Harry Potter e la pietra filosofale', 'Chris Columbus', 8);
+
+var_dump($movie1)
+
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
