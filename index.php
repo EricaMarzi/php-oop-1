@@ -1,9 +1,7 @@
-<!--#### Descrizione
-
+<!--
 #### Bonus 2
 Creare una classe Actor e modificare la classe Movie in modo che accetti piú di un attore
 #### Bonus 3
-Creare un layout html per stampare a schermo una lista di movies.
 Facciamo attenzione all’organizzazione del codice, suddividendolo in appositi file e cartelle. Possiamo ad esempio organizzare il codice
 - creando un file dedicato ai dati (tipo le array di oggetti) che potremmo chiamare db.php
 - mettendo ciascuna classe nel proprio file e magari raggruppare tutte le classi in una cartella dedicata che possiamo chiamare Models
@@ -76,9 +74,6 @@ $movie8 = new Movie (8, 'Harry Potter e i doni della morte pt.2', 8.5, 2011, $te
 
 
 
-// echo $movie1->getPoster($director1);
-// echo $movie2->getPoster($director1);
-
 $movies = [$movie1, $movie2, $movie3, $movie4, $movie5, $movie6, $movie7, $movie8];
 
 
@@ -119,7 +114,7 @@ $movies = [$movie1, $movie2, $movie3, $movie4, $movie5, $movie6, $movie7, $movie
                             <div class="card-body d-flex flex-column justify-content-center" style="height: 350px;">
                                 <h5 class="card-title"><?= $movie->title ?></h5>
                                 <p class="card-text"><?= $movie->plot ?></p>
-                                <address> Pinco pallo </address>
+                                <!-- <address> Pinco pallo </address> -->
                             </div>
                         </div>
                     </div>
