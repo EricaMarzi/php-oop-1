@@ -1,10 +1,6 @@
 <!--#### Descrizione
-Create un file index.php in cui:
- - è definita una classe Movie
-   => all'interno della classe sono dichiarate delle variabili d'istanza
-   => all'interno della classe è definito un costruttore
-   => all'interno della classe è definito almeno un metodo
-- vengono istanziati almeno due oggetti Movie e stampati a schermo i valori delle relative proprietà
+
+
 #### Bonus 1
 Creare una classe Director e modificare la classe Movie in modo che accetti come direttore un'istanza di Director
 #### Bonus 2
@@ -18,22 +14,35 @@ Facciamo attenzione all’organizzazione del codice, suddividendolo in appositi 
 
 <?php 
 
-class Movie {
+class Movie 
+{
+    public $id;
     public $title;
     public $director;
     public $rating;
+    public $year;
 
-    public function __construct ($title, $director, $rating) {
+    public function __construct ($id, $title, $director, $rating, $year) 
+    {
+        $this -> id = $id;
         $this -> title = $title;
         $this -> director = $director;
         $this -> rating = $rating;
+        $this -> year = $year;
+    }
 
+    public function getPoster()
+    {
+        echo $this->title . ' è un film uscito nel ' . $this->year . ' diretto da ' . $this->director;
     }
 }
+//aggiungi il genere
 
-$movie1 = new Movie ('Harry Potter e la pietra filosofale', 'Chris Columbus', 8);
+$movie1 = new Movie (1, 'Harry Potter e la pietra filosofale', 'Chris Columbus', 8, 2001);
+$movie2 = new Movie (2, 'Harry Potter e la camera dei segreti', 'Chris Columbus', 7, 2002);
 
-var_dump($movie1)
+$movie1->getPoster();
+$movie2->getPoster();
 
 
 ?>
