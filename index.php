@@ -8,6 +8,9 @@ Facciamo attenzione all’organizzazione del codice, suddividendolo in appositi 
 - organizzando il layout dividendo la struttura ed i contenuti in file e parziali dedicati.-->
 
 <?php 
+// require_once __DIR__ . '/models/director.php';
+// require_once __DIR__ . '/models/movie.php';
+
 class Director 
 {
     public $first_name;
